@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-# Create your views here.
+from .models import Plant
+from .serializers import PlantSerializer
+
+
+class PlantList(ListCreateAPIView):
+    queryset = Plant.objects.all()
+    serializer_class = PlantSerializer
+
+
+class PlantDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Plant.objects.all()
+    serializer_class = PlantSerializer
