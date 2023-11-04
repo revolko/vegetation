@@ -22,4 +22,5 @@ API_PREFIX = 'api/v1/'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(API_PREFIX, include('vegetation_app.urls')),
+    path(API_PREFIX, include('vegetation_user_app.urls')),
 ]
