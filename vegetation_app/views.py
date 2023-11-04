@@ -10,6 +10,9 @@ class PlantList(ListCreateAPIView):
     serializer_class = PlantSerializer
     permission_classes = [IsAuthenticated]
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class PlantDetail(RetrieveUpdateDestroyAPIView):
     queryset = Plant.objects.all()

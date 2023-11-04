@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Plant(models.Model):
@@ -7,6 +8,7 @@ class Plant(models.Model):
     last_watered = models.DateTimeField()
     water_frequency_summer = models.IntegerField()
     water_frequency_winter = models.IntegerField()
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class WateringType(models.TextChoices):
         SPRINKLER = 'SP', 'Sprinkler'
