@@ -80,8 +80,11 @@ WSGI_APPLICATION = 'vegetation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': CONFIG_ENV.get('POSTGRES_DB'),
+        'USER': CONFIG_ENV.get('POSTGRES_USER'),
+        'PASSWORD': CONFIG_ENV.get('POSTGRES_PASSWORD'),
+        'HOST': CONFIG_ENV.get('POSTGRES_HOST'),
     }
 }
 

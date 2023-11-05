@@ -1,0 +1,11 @@
+db.sqlite3
+.venv
+.ve
+ve
+venv
+.env
+assets
+docker-compose.yml
+*openrc
+LICENSE
+README.md
